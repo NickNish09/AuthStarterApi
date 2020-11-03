@@ -9,7 +9,7 @@ module V1
 
     def require_user
       unless user_signed_in?
-        render json: { error: 'você precisa estar autenticado para fazer o pedido' }, status: :unauthorized
+        render json: { error: 'você precisa estar autenticado ter acesso' }, status: :unauthorized
       end
     end
   end
