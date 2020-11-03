@@ -3,7 +3,7 @@ module V1
     before_action :require_user
 
     def current_user_data
-      render json: current_user
+      render json: current_user.profile_data
     end
     private
 
