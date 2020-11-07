@@ -1,4 +1,11 @@
 # Starter Project com API de autenticação
+## Links massa:
+
+- [Better Specs](https://www.betterspecs.org/) (padrões massa para se 
+usar testando com RSPEC)
+- [What to Test](https://kentcdodds.com/blog/how-to-know-what-to-test) (leitura massa pra ter uma mentalidade
+de testar as coisas mais úteis e saber o que testar)
+
 
 ## Como configurar ambiente massa de testes
 Todas as gemas adicionadas e suas configurações estão presentes nesse projeto, caso precise de uma referência de onde instalar cada coisa.
@@ -59,6 +66,9 @@ SimpleCov.start
 ```
 
 ## Como usar a API de autenticação
+Foi utilizado o Devise Auth Token para as lógicas das rotas de autenticação e de um model de 
+User com Token. Qualquer coisa veja o link: [Devise Auth Token](https://github.com/lynndylanhurley/devise_token_auth)
+
 Você pode importar os requests do POSTMAN com o seguinte link:
 
 https://www.getpostman.com/collections/b7b2dd1f1ba502e64b47
@@ -100,6 +110,7 @@ para que a API encontre o usuário atual:
 - client
 - access-token
 - uid
+
 
 ![exemplo de requisicao autenticada](https://i.imgur.com/nEJayy5.png)
 
