@@ -29,6 +29,8 @@ RSpec.describe "V1::Users", type: :request do
 
       it 'should return the user profile data' do
         expect(JSON.parse(response.body)['name']).to eq @user.name
+        expect(JSON.parse(response.body)['nickname']).to eq @user.nickname
+        expect(JSON.parse(response.body)['email']).to eq @user.email
       end
     end
   end
