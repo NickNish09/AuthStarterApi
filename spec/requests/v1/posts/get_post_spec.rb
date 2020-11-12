@@ -10,12 +10,15 @@ describe "V1::Posts", :type => :request do
     it 'returns success status' do
       get "/v1/posts/#{@post.id}", as: :json
       expect(response).to have_http_status(:success)
+    end
+
+    it 'returns the post' do
       expect(response.body).to eq(@post.to_json)
     end
 
     it 'get nonexistent post' do
       get "/v1/posts/#{SecureRandom.hex}", as: :json
-      expect( response ).to have_http_status(:not_found)
+      expect(response).to have_http_status(:not_found)
     end
   end
 end
