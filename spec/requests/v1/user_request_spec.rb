@@ -6,7 +6,7 @@ RSpec.describe "V1::Users", type: :request do
     @user.create_new_auth_token
   }
 
-  describe "GET #current_user_data" do
+  describe "GET /current_user_data" do
     context "when user is not authenticated" do
       before do
         get current_user_data_path

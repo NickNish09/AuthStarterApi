@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   scope :v1 do
     mount_devise_token_auth_for 'User', at: 'auth'
     get 'current_user_data' => 'v1/user#current_user_data', as: "current_user_data"
-
+  end
+  namespace :v1 do
     resources :posts
   end
   root to: 'main#index'
