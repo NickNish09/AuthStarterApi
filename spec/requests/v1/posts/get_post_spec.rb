@@ -13,6 +13,7 @@ describe "V1::Posts", :type => :request do
     end
 
     it 'returns the post' do
+      get "/v1/posts/#{@post.id}", as: :json
       expect(response.body).to eq(@post.to_json)
     end
 
