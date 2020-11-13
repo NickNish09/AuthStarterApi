@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-  validates :title, :description, presence: true
+  validates :title, :description, :published_at, :subtitle, presence: true
 
   # Função para truncar descrição
   def truncate_desc(size)

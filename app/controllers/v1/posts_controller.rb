@@ -44,7 +44,7 @@ module V1
     private
 
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :published_at, :subtitle)
     end
 
     def set_post

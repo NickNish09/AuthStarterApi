@@ -4,7 +4,7 @@
 ### Criar funções para model Post
 - Criar função para truncar descrição de um post (passando como parâmetro o quanto truncar) [x]
 - Criar função para formatar created_at de um post (formatar data DD/MM/AAAA) [x]
-- Criar campo de subtitle e published at e adicionar validacoes de presença [ ]
+- Criar campo de subtitle e published at e adicionar validacoes de presença [x]
 - Testes para tais funções
 
 ### Criar testes para posts
