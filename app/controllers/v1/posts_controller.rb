@@ -29,10 +29,14 @@ module V1
 
     # PATCH api/v1/post/:id
     def update
-      if @post.update(post_params)
-        render json: @post, status: :ok
-      else
-        render json: @post.errors, status: :unprocessable_entity
+      if @post.user == current_user
+        if @post.update(post_params)
+          render json: @post, status: :ok
+        else
+          render json: @post.errors, status: :unprocessable_entity
+        end
+      else 
+        render json: { message: "Update your own post!" }, status: 401
       end
     end
 
