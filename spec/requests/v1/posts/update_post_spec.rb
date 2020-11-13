@@ -17,5 +17,8 @@ describe "V1::Posts", :type => :request do
       patch "/v1/posts/#{@post.id}", as: :json, params: @params
       expect(response).to have_http_status(:success)
     end
+
+    # Teste para verificar se foi atualizado o post
+    
   end
 end

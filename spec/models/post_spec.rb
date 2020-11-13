@@ -18,4 +18,8 @@ RSpec.describe Post, type: :model do
       expect(post).to_not be_valid
     end
   end
+
+  # Teste para funcao de truncar descricao
+
+  # Teste para funcao de formatar created_at
 end
