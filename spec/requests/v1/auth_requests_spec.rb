@@ -38,4 +38,30 @@ RSpec.describe "V1::AuthRequests", type: :request do
       end
     end
   end
+
+  describe "POST /v1/auth" do
+    before do
+      @user = create(:user, email: "existing@user.com")
+    end
+
+    context 'when user with that email already exists' do
+      before do
+        post user_registration_path, params: {email: @user.email, password: "123456", name: "Other User", nickname: "User"}
+      end
+
+      it 'returns http status 422' do
+        expect(response).to have_http_status(422)
+      end
+    end
+
+    context 'when the email is available' do
+      before do
+        post user_registration_path, params: {email: "newemail@user.com", password: "123456", name: "Other User", nickname: "User"}
+      end
+
+      it 'returns http status 200' do
+        expect(response).to have_http_status(200)
+      end
+    end
+  end
 end

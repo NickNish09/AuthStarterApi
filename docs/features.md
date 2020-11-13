@@ -15,7 +15,7 @@
 ### Testar rotas de autenticação
 - Testar se SignIn/SignUp funciona com parametros corretos (email, senha)
 (se retorna os dados do usuário) [x]
-- Testar se impede criar usuario com mesmo email [ ]
+- Testar se impede criar usuario com mesmo email [x]
 - Testar se não encontra usuario caso não exista [x]
 
 ### Associar posts ao usuário (1 usuário tem vários posts)
