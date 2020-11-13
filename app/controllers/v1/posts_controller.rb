@@ -38,7 +38,11 @@ module V1
 
     # DELETE api/v1/post/:id
     def destroy
-      render json: { message: "Sucessfully Deleted Bank Account" }, status: :ok if @post.destroy
+      if @post.user == current_user
+        render json: { message: "Sucessfully Deleted Bank Account" }, status: :ok if @post.destroy
+      else
+        render json: { message: "Delete your own post!" }, status: 401
+      end
     end
 
     private

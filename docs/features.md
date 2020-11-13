@@ -21,6 +21,6 @@
 ### Associar posts ao usuário (1 usuário tem vários posts)
 - Criar migração para adicionar user_id ao model Post [x]
 - Adicionar relacionamento na factory de Posts [x]
-- Ajustar rota de postagens para usuário atualizar/deletar apenas a própria postagem [ ]
+- Ajustar rota de postagens para usuário atualizar/deletar apenas a própria postagem [x]
 - Ajustar rota de postagens para criar post apenas autenticado [x]
 - Fazer testes para funcionalidades acima [x]
