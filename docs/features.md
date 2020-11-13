@@ -8,9 +8,9 @@
 - Testes para tais funções
 
 ### Criar testes para posts
-- Fazer teste para checar retorno do request de criar Posts [ ]
-- Adicionar 2 contextos para teste de GET /posts/:id (quando existe uma postagem e quando nao existe ela) [ ]
-- Adicionar teste para checar retorno atualizado para request de atualizar Posts [ ]
+- Fazer teste para checar retorno do request de criar Posts [x]
+- Adicionar 2 contextos para teste de GET /posts/:id (quando existe uma postagem e quando nao existe ela) [x]
+- Adicionar teste para checar retorno atualizado para request de atualizar Posts [x]
 
 ### Testar rotas de autenticação
 - Testar se SignIn/SignUp funciona com parametros corretos (email, senha)

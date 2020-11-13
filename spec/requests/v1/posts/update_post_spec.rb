@@ -11,14 +11,17 @@ describe "V1::Posts", :type => :request do
               "description": "Nova descrição interessante"
           }
       }
+      patch "/v1/posts/#{@post.id}", as: :json, params: @params
     end
 
     it 'returns success status' do
-      patch "/v1/posts/#{@post.id}", as: :json, params: @params
       expect(response).to have_http_status(:success)
     end
 
     # Teste para verificar se foi atualizado o post
+    it 'updates the post data' do
+      expect(JSON.parse(response.body)['title']).to eq "Novo título legal"
+    end
     
   end
 end
