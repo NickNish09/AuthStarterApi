@@ -4,5 +4,6 @@ FactoryBot.define do
     description { FFaker::Lorem.paragraph }
     published_at { Date.today }
     subtitle { FFaker::Lorem.sentence }
+    association :user
   end
 end

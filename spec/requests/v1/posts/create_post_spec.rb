@@ -2,6 +2,11 @@ require 'rails_helper'
 
 describe "V1::Posts", :type => :request do
 
+  let(:valid_headers) {
+    @user = create(:user)
+    @user.create_new_auth_token
+  }
+
   describe "POST /posts" do
     before(:each) do
       @params = {
@@ -12,7 +17,7 @@ describe "V1::Posts", :type => :request do
               "published_at": "12-12-2012"
           }
       }
-      post "/v1/posts", as: :json, params: @params
+      post "/v1/posts", as: :json, params: @params, headers: valid_headers
     end
 
     it 'returns success status' do

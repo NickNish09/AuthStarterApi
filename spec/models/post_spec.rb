@@ -27,6 +27,11 @@ RSpec.describe Post, type: :model do
       post = build(:post, published_at: nil)
       expect(post).to_not be_valid
     end
+
+    it 'is not valid without a user' do
+      post = build(:post, user: nil)
+      expect(post).to_not be_valid
+    end
   end
 
   # Teste para funcao de truncar descricao

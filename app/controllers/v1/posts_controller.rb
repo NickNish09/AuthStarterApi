@@ -19,7 +19,7 @@ module V1
 
     # POST api/v1/post
     def create
-      @post = Post.new(post_params)
+      @post = current_user.posts.new(post_params)
       if @post.save
         render json: @post, status: :created
       else
