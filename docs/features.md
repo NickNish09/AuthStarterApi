@@ -2,8 +2,8 @@
 
 ## Posts
 ### Criar funções para model Post
-- Criar função para truncar descrição de um post (passando como parâmetro o quanto truncar) [ ]
-- Criar função para formatar created_at de um post (formatar data DD/MM/AAAA) [ ]
+- Criar função para truncar descrição de um post (passando como parâmetro o quanto truncar) [x]
+- Criar função para formatar created_at de um post (formatar data DD/MM/AAAA) [x]
 - Criar campo de subtitle e published at e adicionar validacoes de presença [ ]
 - Testes para tais funções
 
@@ -14,9 +14,9 @@
 
 ### Testar rotas de autenticação
 - Testar se SignIn/SignUp funciona com parametros corretos (email, senha)
-(se retorna os dados do usuário) [ ]
+(se retorna os dados do usuário) [x]
 - Testar se impede criar usuario com mesmo email [ ]
-- Testar se não encontra usuario caso não exista [ ]
+- Testar se não encontra usuario caso não exista [x]
 
 ### Associar posts ao usuário (1 usuário tem vários posts)
 - Criar migração para adicionar user_id ao model Post [ ]
