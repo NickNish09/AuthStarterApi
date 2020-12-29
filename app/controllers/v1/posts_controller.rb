@@ -19,7 +19,7 @@ module V1
 
     # POST api/v1/post
     def create
-      @post = Post.new(post_params)
+      @post = current_user.posts.new(post_params)
       if @post.save
         render json: @post, status: :created
       else
@@ -29,22 +29,30 @@ module V1
 
     # PATCH api/v1/post/:id
     def update
-      if @post.update(post_params)
-        render json: @post, status: :ok
-      else
-        render json: @post.errors, status: :unprocessable_entity
+      if @post.user == current_user
+        if @post.update(post_params)
+          render json: @post, status: :ok
+        else
+          render json: @post.errors, status: :unprocessable_entity
+        end
+      else 
+        render json: { message: "Update your own post!" }, status: 401
       end
     end
 
     # DELETE api/v1/post/:id
     def destroy
-      render json: { message: "Sucessfully Deleted Bank Account" }, status: :ok if @post.destroy
+      if @post.user == current_user
+        render json: { message: "Sucessfully Deleted Bank Account" }, status: :ok if @post.destroy
+      else
+        render json: { message: "Delete your own post!" }, status: 401
+      end
     end
 
     private
 
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :published_at, :subtitle)
     end
 
     def set_post

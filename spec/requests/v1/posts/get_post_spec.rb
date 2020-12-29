@@ -7,19 +7,23 @@ describe "V1::Posts", :type => :request do
       @post = create(:post)
     end
 
-    it 'returns success status' do
-      get "/v1/posts/#{@post.id}", as: :json
-      expect(response).to have_http_status(:success)
+    context 'when post exists' do
+      it 'returns success status' do
+        get "/v1/posts/#{@post.id}", as: :json
+        expect(response).to have_http_status(:success)
+      end
+  
+      it 'returns the post' do
+        get "/v1/posts/#{@post.id}", as: :json
+        expect(response.body).to eq(@post.to_json)
+      end
     end
 
-    it 'returns the post' do
-      get "/v1/posts/#{@post.id}", as: :json
-      expect(response.body).to eq(@post.to_json)
-    end
-
-    it 'get nonexistent post' do
-      get "/v1/posts/#{SecureRandom.hex}", as: :json
-      expect(response).to have_http_status(:not_found)
+    context 'when post doesnt exist' do
+      it 'returns http status not found' do
+        get "/v1/posts/#{SecureRandom.hex}", as: :json
+        expect(response).to have_http_status(:not_found)
+      end
     end
   end
 end
